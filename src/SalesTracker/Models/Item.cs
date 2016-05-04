@@ -16,14 +16,16 @@ namespace SalesTracker.Models
         public int RetailPrice { set; get; }
         public int WholesaleCost { set; get; }
         public int Inventory { set; get; }
+        public string Image { get; set; }
          
-        public Item(string name, int retailPrice, int wholesaleCost, int inventory, int id = 0 )
+        public Item(string name, int retailPrice, int wholesaleCost, int inventory, string image, int id = 0 )
         {
             ItemId = id;
             Name = name;
             RetailPrice = retailPrice;
             WholesaleCost = wholesaleCost;
             Inventory = inventory;
+            Image = image;
         }
 
         public Item() { }

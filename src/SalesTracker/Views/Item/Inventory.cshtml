@@ -1,0 +1,15 @@
+﻿@model IEnumerable<SalesTracker.Models.Item>
+
+<h2>Current Inventory</h2>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="grid col-sm-4">
+            <h3>@item.Name</h3>
+            <p>Price: $<span>@item.RetailPrice</span>.00</p>
+            <p>Current Inventory: @item.Inventory</p>
+            <img src="@item.Image" />
+        </div>
+    }
+</div>

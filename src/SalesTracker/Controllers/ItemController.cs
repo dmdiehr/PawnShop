@@ -38,5 +38,13 @@ namespace SalesTracker.Controllers
 
             return RedirectToAction("Managers", "Home");
         }
+
+        public IActionResult Inventory()
+        {
+            var theView = _db.Items.ToList();
+
+            return View(theView);
+
+        }
     }
 }
