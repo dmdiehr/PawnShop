@@ -1,0 +1,44 @@
+﻿@model SalesTracker.Models.Item
+@{
+    ViewData["Title"] = "Add Inventory";
+}
+
+<h2>@ViewData["Title"].</h2>
+
+<form asp-controller="Item" asp-action="CreateItem" method="post" class="form-horizontal" role="form">
+    <h4>Create a new account.</h4>
+    <hr />
+    <div class="form-group">
+        <label asp-for="Name" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Name" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="RetailPrice" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="RetailPrice" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="WholesaleCost" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="WholesaleCost" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Inventory" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Inventory" class="form-control" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">Register</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
