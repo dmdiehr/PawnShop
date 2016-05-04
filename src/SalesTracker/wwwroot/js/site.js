@@ -10,4 +10,26 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('.show-items').click(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '~/../../Item/Inventory',
+            success: function (result) {
+                $('#item-grid').html(result);
+            }
+        });
+    });
+
+    $('.hide-inventory').click(function () {
+        $.ajax({
+            type: 'GET',
+            dataType: 'html',
+            url: '~/../../Home/Associates',
+            success: function (result) {
+                $('#associates').html(result);
+            }
+        });
+    });
 });

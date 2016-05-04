@@ -8,9 +8,10 @@ using SalesTracker.Models;
 namespace SalesTracker.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160504222243_D")]
+    partial class D
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -146,22 +147,6 @@ namespace SalesTracker.Migrations
                     b.HasAnnotation("Relational:TableName", "AspNetUsers");
                 });
 
-            modelBuilder.Entity("SalesTracker.Models.CartItems", b =>
-                {
-                    b.Property<int>("CartId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<DateTime>("CreateDate");
-
-                    b.Property<int>("ItemId");
-
-                    b.Property<int>("Quantity");
-
-                    b.HasKey("CartId");
-
-                    b.HasAnnotation("Relational:TableName", "CartItems");
-                });
-
             modelBuilder.Entity("SalesTracker.Models.Item", b =>
                 {
                     b.Property<int>("ItemId")
@@ -228,13 +213,6 @@ namespace SalesTracker.Migrations
                     b.HasOne("SalesTracker.Models.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("SalesTracker.Models.CartItems", b =>
-                {
-                    b.HasOne("SalesTracker.Models.Item")
-                        .WithMany()
-                        .HasForeignKey("ItemId");
                 });
 
             modelBuilder.Entity("SalesTracker.Models.Item", b =>

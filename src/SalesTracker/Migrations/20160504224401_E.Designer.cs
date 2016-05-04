@@ -8,9 +8,10 @@ using SalesTracker.Models;
 namespace SalesTracker.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160504224401_E")]
+    partial class E
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -148,7 +149,7 @@ namespace SalesTracker.Migrations
 
             modelBuilder.Entity("SalesTracker.Models.CartItems", b =>
                 {
-                    b.Property<int>("CartId")
+                    b.Property<int>("CartItemId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("CreateDate");
@@ -157,7 +158,7 @@ namespace SalesTracker.Migrations
 
                     b.Property<int>("Quantity");
 
-                    b.HasKey("CartId");
+                    b.HasKey("CartItemId");
 
                     b.HasAnnotation("Relational:TableName", "CartItems");
                 });

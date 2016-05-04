@@ -1,15 +1,21 @@
 ﻿@model IEnumerable<SalesTracker.Models.Item>
 
 <h2>Current Inventory</h2>
+<button class="hide-inventory">Hide</button>
 
 <div class="row">
     @foreach (var item in Model)
     {
         <div class="grid col-sm-4">
             <h3>@item.Name</h3>
+            <div>
+                <button class="btn btn-xs" id="sell">Add To Cart</button>
+
+            </div>
             <p>Price: $<span>@item.RetailPrice</span>.00</p>
             <p>Current Inventory: @item.Inventory</p>
             <img src="@item.Image" />
+           
         </div>
     }
 </div>

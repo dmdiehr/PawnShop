@@ -14,5 +14,8 @@ namespace SalesTracker.Models
             base.OnModelCreating(builder);          
         }
         public DbSet<Item> Items { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<CartItems> CartItems { get; set; }
+
     }
 }

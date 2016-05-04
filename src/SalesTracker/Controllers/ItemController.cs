@@ -46,5 +46,10 @@ namespace SalesTracker.Controllers
             return View(theView);
 
         }
+
+        public IActionResult AddToCart(int id)
+        {
+            CartId = GetCartId();
+        }
     }
 }
